@@ -1,34 +1,49 @@
-# Core Skills Drill 6A — Text Processing & NLP Basics
-
-Module 6 Week A drill for AI.SPIRE Applied AI & ML Systems.
-
-## Setup
-
-```bash
+Setup
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-```
 
-This installs spaCy for the first time in this course and downloads the spaCy English language model.
+This installs spaCy and downloads the English language model required for processing text.
 
-## Tasks
+Tasks
 
-Complete the three functions in `drill.py`:
-1. `preprocess_text(text, stop_words)` — Tokenize with spaCy, drop punctuation/whitespace, lowercase, filter stop words
-2. `extract_linguistic_annotations(text)` — Extract (token, POS, dependency) tuples with spaCy
-3. `extract_entities(text)` — Extract named entities using spaCy Named Entity Recognition
+Complete the three functions in drill.py:
 
-## Submission
+preprocess_text(text, stop_words)
+Process raw text using spaCy
+Remove punctuation and whitespace
+Convert tokens to lowercase
+Filter out custom stop words
+extract_linguistic_annotations(text)
+Extract token-level annotations
+Return tuples of:
+(token_text, POS_tag, dependency_label)
+extract_entities(text)
+Use spaCy Named Entity Recognition (NER)
+Return detected entities as:
+(entity_text, entity_label)
+What I implemented
+Built a clean preprocessing pipeline for text normalization
+Extracted linguistic features (POS + dependency parsing) for each token
+Implemented Named Entity Recognition (NER) using spaCy
+Fixed a bug in entity extraction to ensure all entities are returned (not just the first one)
+How to Run
+python drill.py
 
-1. Create a branch: `drill-6a-text-basics`
-2. Complete `drill.py`
-3. Open a PR to `main`
-4. Paste your PR URL into TalentLMS → Module 6 Week A → Drill 6A
+You should see:
 
----
+Cleaned tokens output
+Token-level linguistic annotations
+Extracted named entities
+Submission Steps
 
-## License
+Create a branch:
 
-This repository is provided for educational use only. See [LICENSE](LICENSE) for terms.
+git checkout -b drill-6a-text-basics
+Complete drill.py
 
-You may clone and modify this repository for personal learning and practice, and reference code you wrote here in your professional portfolio. Redistribution outside this course is not permitted.
+Push your branch:
+
+git push --set-upstream origin drill-6a-text-basics
+Open a Pull Request to main
+Submit your PR link in:
+TalentLMS → Module 6 Week A → Drill 6A
